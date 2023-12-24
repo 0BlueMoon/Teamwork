@@ -1,0 +1,30 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("Teamwork")
+
+local BlueMoon = PhantomForcesWindow:NewSection("Main")
+
+BlueMoon:CreateButton("Auto egg",function()
+    local args = {
+        [1] = "Gingerbread",
+        [2] = 1
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("OpenEgg"):FireServer(unpack(args))
+    end)
+BlueMoon:CreateToggle("Auto invite", function(value)
+   
+    while true do wait()
+        local args = {
+            [1] = id
+        }
+        
+        game:GetService("ReplicatedStorage").Events.InviteFriend:FireServer(unpack(args))
+    end
+    end)
+
+        BlueMoon:CreateToggle("Auto candy", function(value)
+         while true do wait()
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("CandyEvent"):FireServer()
+         end
+            end)
