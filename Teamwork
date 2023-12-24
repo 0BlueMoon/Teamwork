@@ -9,7 +9,7 @@ end)
 
 local BlueMoon = PhantomForcesWindow:NewSection("Script")
 
-BlueMoon:CreateButton("Auto invite",function()
+BlueMoon:CreateButton("Auto invite(Spam)",function()
     local args = {
         [1] = id
     }
