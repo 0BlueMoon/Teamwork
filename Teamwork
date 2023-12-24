@@ -9,6 +9,13 @@ end)
 
 local BlueMoon = PhantomForcesWindow:NewSection("Script")
 
+BlueMoon:CreateButton("Auto invite",function()
+    local args = {
+        [1] = id
+    }
+    
+    game:GetService("ReplicatedStorage").Events.InviteFriend:FireServer(unpack(args))
+    end)
 BlueMoon:CreateButton("Auto egg",function()
     local args = {
         [1] = "Festive",
@@ -17,16 +24,6 @@ BlueMoon:CreateButton("Auto egg",function()
     
     game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("OpenEgg"):FireServer(unpack(args))
     
-    end)
-BlueMoon:CreateToggle("Auto invite", function(value)
-   
-    while true do wait()
-        local args = {
-            [1] = id
-        }
-        
-        game:GetService("ReplicatedStorage").Events.InviteFriend:FireServer(unpack(args))
-    end
     end)
 
         BlueMoon:CreateToggle("Auto candy", function(value)
